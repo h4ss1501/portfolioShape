@@ -7,24 +7,40 @@ package com.company;
         //methods cant be abstract and private, use protected.
 
         //variables
-        protected int height; //Y-axis
-        protected int width; //X-axis
+        protected int x = 0; //Y-axis
+        protected int y = 0; //X-axis
 
         //constructor
-        public Shape(int height,int width){
-            this.height = height;
-            this.width = width;
+        public Shape(int x,int y){
+            this.x = x;
+            this.y = y;
         }
 
+        //getters & setters
 
-   //methods
-    abstract float AreaCalc();
+
+        public int getX() {
+            return x;
+        }
+
+        public void setX(int x) {
+            this.x = x;
+        }
+
+        public int getY() {
+            return y;
+        }
+
+        public void setY(int y) {
+            this.y = y;
+        }
+
+        //methods
+    abstract void AreaCalc();
+    abstract double CircumCalc();
 
     //getCenter
     abstract int getCenter();
-
-    //calc circumference
-   abstract int CircumCalc();
 
     //boolean
     abstract boolean isInsideShape();

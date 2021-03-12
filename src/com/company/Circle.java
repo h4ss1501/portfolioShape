@@ -3,14 +3,17 @@ package com.company;
 public class Circle extends Shape{
 
     private String name;
+    private int rad;
 
-    public Circle(int height, int width) {
+
+    public Circle(int height, int width, int rad) {
         super(height, width);
+        rad = this.rad;
     }
 
     @Override
-    float AreaCalc() {
-        return 0;
+    void AreaCalc() {
+        System.out.println("The area for the circle " + name + " is " + Math.PI*rad*rad);
     }
 
     @Override
@@ -19,8 +22,8 @@ public class Circle extends Shape{
     }
 
     @Override
-    int CircumCalc() {
-        return 0;
+    double CircumCalc() {
+        return 2*Math.PI*rad;
     }
 
     @Override

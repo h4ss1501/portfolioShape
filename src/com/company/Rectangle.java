@@ -5,24 +5,24 @@ public class Rectangle extends Shape{
     private String name;
 
 
-    public Rectangle(String name,int height, int width) {
-        super(height, width);
-        this.name = name;
 
+    public Rectangle(int x, int y, String name) {
+        super(x, y);
+        this.name = name;
     }
 
     @Override
-    float AreaCalc() {
-        return height * width;
+    void AreaCalc() {
+        System.out.println("The area of this Rectangle " + name + "´is " + x * y );
+    }
+
+    @Override
+    double CircumCalc() {
+        return 2*x+2*y;
     }
 
     @Override
     int getCenter() {
-        return 0;
-    }
-
-    @Override
-    int CircumCalc() {
         return 0;
     }
 

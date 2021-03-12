@@ -1,18 +1,20 @@
 package com.company;
-import java.lang.Math.*;
-
+/*
 public class Triangle extends Shape{
 
     private String name;
+    private int z;
 
-    public Triangle(String name,int height, int width) {
-        super(height, width);
+    public Triangle(String name ,int x, int y) {
+        super(x, y);
         this.name = name;
     }
 
+
     @Override
-    float AreaCalc() {
-        return (float) (0.5 * width * height);
+    void AreaCalc() {
+        System.out.println("The area of triangle " + name + " is: " + 0.5 * x * z);
+
     }
 
     @Override
@@ -21,12 +23,8 @@ public class Triangle extends Shape{
     }
 
     @Override
-    int CircumCalc() {
-        return 0;
-    }
-
-    @Override
     boolean isInsideShape() {
         return false;
     }
 }
+*/
