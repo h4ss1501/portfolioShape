@@ -1,47 +1,60 @@
 package com.company;
 
-    abstract public class Shape {
+import java.awt.*;
+
+//Inheriting by extending Point
+abstract class Shape extends Point {
 
 
-        //may or may not be abstract methods, but abstract methods can only be in abstract class
-        //methods cant be abstract and private, use protected.
+/*
+    //variables
+    public String name;
+    public Point p1;
+    public Point p2;
 
-        //variables
-        protected int x = 0; //Y-axis
-        protected int y = 0; //X-axis
-
-        //constructor
-        public Shape(int x,int y){
-            this.x = x;
-            this.y = y;
-        }
-
-        //getters & setters
+//constructor
 
 
-        public int getX() {
-            return x;
-        }
+    public AShape(String name, Point p1, Point p2) {
+        this.name = name;
+        this.p1 = p1;
+        this.p2 = p2;
+    }
 
-        public void setX(int x) {
-            this.x = x;
-        }
+    public AShape(String name, Point point){
+        this.name = name;
+        this.p1 = point;
+    }
+*/
 
-        public int getY() {
-            return y;
-        }
 
-        public void setY(int y) {
-            this.y = y;
-        }
 
-        //methods
-    abstract void AreaCalc();
-    abstract double CircumCalc();
+    //methods
 
-    //getCenter
-    abstract int getCenter();
+    //Returning center of a point
+    abstract Point getCenter();
 
-    //boolean
-    abstract boolean isInsideShape();
+    //Calculate the area of a shape
+    abstract double AreaCalc();
+
+    //Computing the circumference of a shape
+    abstract double circumCalc();
+
+    //Boolean returning true/false, whether a point is inside a shape or not.
+    abstract boolean isInside(Point point);
+
+    //Computing the euclidean distance between shapes (Center to center)
+    double eucliDist(Shape shape){
+        Point p = new Point();
+        return p.distance(shape.getCenter().x,shape.getCenter().y,getCenter().x,getCenter().y);
+    }
+
+
+
+    /*
+    //Calculate the circumference
+    abstract void CircumCalc();
+*/
+
+
 }

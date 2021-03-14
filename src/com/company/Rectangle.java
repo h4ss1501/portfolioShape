@@ -1,33 +1,61 @@
 package com.company;
 
+import java.awt.*;
+
 public class Rectangle extends Shape{
 
-    private String name;
+        //Missing methods
+        // -isInside boolean
+
+    //fields
+    Point point; // XY coordinate values on a cartesian plane
+    double height; //height of a rectangle
+    double width; //width of a rectangle
+
+    //constructor
+    public Rectangle(Point p, double height,double width){
+        this.point = p;
+        this.height = height;
+        this.width = width;
+    }
 
 
+    @Override
+    //Returns the center
+    //xCenter = (x1 + width) / 2
+    //yCenter = (y1 + height) / 2
+    Point getCenter() {
+        Point center = new Point();
+        center.x = (int) ((this.point.x + width) /2);
+        center.y = (int) ((this.point.x + height) / 2);
 
-    public Rectangle(int x, int y, String name) {
-        super(x, y);
-        this.name = name;
+        return center;
     }
 
     @Override
-    void AreaCalc() {
-        System.out.println("The area of this Rectangle " + name + "´is " + x * y );
+    /*
+    Method calculating area of a rectangle
+
+    A = height * width
+    * */
+    double AreaCalc() {
+        return height * width;
+    }
+
+
+    /*
+    Method to calculate the circumference of a rectangle
+
+    C = 2(W+H)
+    * */
+    double circumCalc() {
+        return 2 * (width + height);
     }
 
     @Override
-    double CircumCalc() {
-        return 2*x+2*y;
-    }
-
-    @Override
-    int getCenter() {
-        return 0;
-    }
-
-    @Override
-    boolean isInsideShape() {
+    boolean isInside(Point point) {
         return false;
     }
+
+
 }

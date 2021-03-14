@@ -1,33 +1,47 @@
 package com.company;
 
-public class Circle extends Shape{
+import java.awt.*;
 
-    private String name;
-    private int rad;
+public class Circle extends Shape {
+
+    //missing methods
+    // -isInside
 
 
-    public Circle(int height, int width, int rad) {
-        super(height, width);
-        rad = this.rad;
+    private Point c; //Point --> Consists of X,Y coordinates of the center of circle
+    private double rad; //radius of a circle
+
+
+    //constructor
+    public Circle(Point center, double radius) {
+        this.c = center;
+        this.rad = radius;
+    }
+
+
+    @Override
+    Point getCenter() {
+        return c;
+    }
+
+
+
+
+    //Returns the calculated area of a circle A = pi * rad^2
+    @Override
+    double AreaCalc() {
+        return Math.PI * rad * rad;
+    }
+
+    //Returns the circumference of a circle C = 2 * Pi * Radius
+    @Override
+    double circumCalc() {
+        return 2 * Math.PI * rad;
     }
 
     @Override
-    void AreaCalc() {
-        System.out.println("The area for the circle " + name + " is " + Math.PI*rad*rad);
-    }
-
-    @Override
-    int getCenter() {
-        return 0;
-    }
-
-    @Override
-    double CircumCalc() {
-        return 2*Math.PI*rad;
-    }
-
-    @Override
-    boolean isInsideShape() {
+    boolean isInside(Point point) {
         return false;
     }
+
 }
