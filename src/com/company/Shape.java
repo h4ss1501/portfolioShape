@@ -6,36 +6,11 @@ import java.awt.*;
 abstract class Shape extends Point {
 
 
-/*
-    //variables
-    public String name;
-    public Point p1;
-    public Point p2;
-
-//constructor
-
-
-    public AShape(String name, Point p1, Point p2) {
-        this.name = name;
-        this.p1 = p1;
-        this.p2 = p2;
-    }
-
-    public AShape(String name, Point point){
-        this.name = name;
-        this.p1 = point;
-    }
-*/
-
-
-
-    //methods
-
     //Returning center of a point
     abstract Point getCenter();
 
     //Calculate the area of a shape
-    abstract double AreaCalc();
+     abstract double areaCalc();
 
     //Computing the circumference of a shape
     abstract double circumCalc();
@@ -49,12 +24,6 @@ abstract class Shape extends Point {
         return p.distance(shape.getCenter().x,shape.getCenter().y,getCenter().x,getCenter().y);
     }
 
-
-
-    /*
-    //Calculate the circumference
-    abstract void CircumCalc();
-*/
 
 
 }

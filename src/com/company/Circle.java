@@ -4,36 +4,43 @@ import java.awt.*;
 
 public class Circle extends Shape {
 
-    //missing methods
-    // -isInside
 
 
-    private Point c; //Point --> Consists of X,Y coordinates of the center of circle
+    private Point center; //Point --> Consists of X,Y coordinates of the center of circle
     private double rad; //radius of a circle
 
 
     //constructor
-    public Circle(Point center, double radius) {
-        this.c = center;
+    public Circle(Point cp, double radius) {
+        this.center = cp;
         this.rad = radius;
     }
 
 
     @Override
     Point getCenter() {
-        return c;
+        return center;
     }
 
+    /*
+    Method calculating area of a circle
 
+   circle A = pi * rad^2
 
-
-    //Returns the calculated area of a circle A = pi * rad^2
+    Returns a double value.
+    * */
     @Override
-    double AreaCalc() {
+    double areaCalc() {
         return Math.PI * rad * rad;
     }
 
-    //Returns the circumference of a circle C = 2 * Pi * Radius
+    /*
+    Method calculating circumference of a rectangle
+
+    C = 2 * PI * Radius
+
+    Returns a double value.
+    */
     @Override
     double circumCalc() {
         return 2 * Math.PI * rad;
@@ -41,7 +48,10 @@ public class Circle extends Shape {
 
     @Override
     boolean isInside(Point point) {
-        return false;
+        if (point.x <= (center.x + rad) && point.x >= (center.x - rad)
+                && point.y <= (center.y + rad) && point.y >= (center.y - rad)){
+        return true;
     }
-
+    return false;
+}
 }

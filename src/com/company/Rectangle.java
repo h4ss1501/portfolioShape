@@ -8,13 +8,13 @@ public class Rectangle extends Shape{
         // -isInside boolean
 
     //fields
-    Point point; // XY coordinate values on a cartesian plane
+    Point coordinates; // XY coordinate values on a cartesian plane
     double height; //height of a rectangle
     double width; //width of a rectangle
 
     //constructor
     public Rectangle(Point p, double height,double width){
-        this.point = p;
+        this.coordinates = p;
         this.height = height;
         this.width = width;
     }
@@ -26,8 +26,8 @@ public class Rectangle extends Shape{
     //yCenter = (y1 + height) / 2
     Point getCenter() {
         Point center = new Point();
-        center.x = (int) ((this.point.x + width) /2);
-        center.y = (int) ((this.point.x + height) / 2);
+        center.x = (int) ((this.coordinates.x + width) /2);
+        center.y = (int) ((this.coordinates.x + height) / 2);
 
         return center;
     }
@@ -37,8 +37,10 @@ public class Rectangle extends Shape{
     Method calculating area of a rectangle
 
     A = height * width
+
+    Returns a double value.
     * */
-    double AreaCalc() {
+    double areaCalc() {
         return height * width;
     }
 
@@ -47,6 +49,8 @@ public class Rectangle extends Shape{
     Method to calculate the circumference of a rectangle
 
     C = 2(W+H)
+
+    Returns a double value.
     * */
     double circumCalc() {
         return 2 * (width + height);
@@ -54,8 +58,19 @@ public class Rectangle extends Shape{
 
     @Override
     boolean isInside(Point point) {
-        return false;
+
+        //bottom-left
+        //top-right
+
+        if(point.x >= coordinates.x && point.y >= coordinates.y && point.x <=(coordinates.x +width)
+                && point.y <=(coordinates.y+height)) {
+            return true;
+        }
+        return  false;
+
+
     }
 
 
 }
+
