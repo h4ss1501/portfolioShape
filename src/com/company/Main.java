@@ -17,7 +17,7 @@ public class Main {
         System.out.println("The circumference of a rectangle is " + rect.circumCalc());
 
         System.out.print(circ.isInside(new Point(2,2)));
-        System.out.println ("The are of the Rectangle");
+
 
     }
 }
